@@ -1,0 +1,640 @@
+/* ===== Theme Tokens (Navia — Cream & Gold) ===== */
+:root,
+[data-theme='light'] {
+  --bg: #faf6ef;
+  --bg-gradient-1: #fbf8f1;
+  --bg-gradient-2: #f2e9d8;
+  --surface: #ffffff;
+  --surface-soft: #f7f1e6;
+  --text: #2b2620;
+  --text-muted: #7a7062;
+ --gold: #d4af5a;
+  --gold-soft: #f2e3b8;
+  --gold-tint: rgba(212, 175, 90, 0.14);
+  --border: rgba(212, 175, 90, 0.28);
+  --shadow: 0 10px 30px rgba(150, 112, 40, 0.12);
+  --shadow-sm: 0 4px 14px rgba(150, 112, 40, 0.08);
+  --nav-bg: rgba(250, 246, 239, 0.8);
+}
+
+/* ===== Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Sarabun', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-weight: 400;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+h1 {
+    color: #4A3B1B; /* สีน้ำตาลเข้มอมทอง อ่านง่ายและตัดกับพื้นหลังสีทองสว่างได้ดีมาก */
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* เพิ่มมิติแสงเงาสีขาวซอฟต์ ๆ ด้านหลัง */
+}
+
+/* แต่งสีหัวข้อประจำเซกชัน (เช่น ประวัติการศึกษา, ทักษะความสามารถ) */
+h2 {
+    color: #C29A38;
+    border-bottom: 3px solid #C29A38;
+    padding-bottom: 8px;
+    
+    /* 🛠️ เพิ่ม 3 บรรทัดนี้เข้าไปใน h2 ตัวเดิม */
+    text-align: center;       /* สั่งตัวอักษรอยู่ตรงกลาง */
+    display: table;           /* บีบขนาดขอบล่างให้กว้างเท่าตัวหนังสือพอดี */
+    margin: 0 auto 30px auto; /* ผลักขอบซ้ายขวาให้เท่ากันจนอยู่กึ่งกลางหน้าจอ */
+}
+
+/* แต่งสีหัวข้อย่อยด้านในการ์ด (เช่น ระดับปริญญาตรี, Programming) */
+h3 {
+    color: #2C220E; /* สีน้ำตาลเข้มจัดเกือบดำ เพื่อให้ข้อความส่วนเนื้อหาดูคมชัดที่สุด */
+}
+
+h4 {
+    color: #C29A38;
+    border-bottom: 3px solid #C29A38;
+    padding-bottom: 8px;
+    display: table;           /* บีบขนาดขอบล่างให้กว้างเท่าตัวหนังสือพอดี */
+   
+}
+
+
+.logo,
+.nav-links a,
+.tag,
+.contact-label {
+  font-family: 'Prompt', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===== Navigation ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.25s ease;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--gold-tint);
+  color: var(--gold);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(-15deg) scale(1.08);
+  background: var(--gold-soft);
+  color: var(--surface);
+}
+
+/* ===== Hero ===== */
+.hero {
+ width: 100%;
+    /* ใช้เฉดสีเหลืองทองสว่างละมุนละไม ไล่ระดับให้ดูมีมิติพรีเมียม */
+    background: #ffcd60;
+    padding: 80px 20px;
+    border-bottom: 2px solid #E6C667; /* ปรับเส้นขอบล่างให้เข้ากับสีทองสว่าง */
+    box-shadow: 0 4px 20px rgba(230, 198, 103, 0.15);
+}
+
+/* Text colors tuned for contrast on the gold hero background */
+.hero .name {
+  color: #2b2620;
+}
+
+.hero .subtitle {
+  color: #4a3c14;
+}
+
+.hero .university {
+  color: #fff0ce;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 240px;
+  height: 240px;
+  border-radius: 20px;
+  padding: 6px;
+  background: linear-gradient(145deg, var(--gold), var(--gold-soft));
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+
+.avatar:hover {
+  transform: scale(1.05) rotate(2deg); /* ขยายใหญ่ขึ้นและเอียงเล็กน้อยให้ดูมีลูกเล่น */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* เพิ่มเงาให้ดูเหมือนลอยขึ้นมา */
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 4px solid var(--surface);
+}
+
+.name {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.subtitle {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.university {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+}
+
+/* ===== Sections ===== */
+.section {
+  padding: 5rem 1.5rem;
+}
+
+.section-alt {
+  background: var(--surface-soft);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--text-muted);
+  margin-top: 0.35rem;
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+}
+
+/* ===== About Me ===== */
+/* 1. กล่องกรอบหลัก */
+/* 1. ตัวกรอบสีทองมนๆ */
+.about-container {
+  background: var(--surface); /* หรือใส่สี #FFFDF3 ตามธีมคุณ */
+  border: 1px solid #E6C667;
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+/* 2. จัดวาง Flexbox ให้ข้อความซ้าย รูปขวา */
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.about-text { flex: 1; }
+.about-img { flex: 0 0 40%; } /* คุมขนาดรูปให้ไม่ใหญ่เกินไป */
+
+.about-img img {
+  width: 85%;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+/* ===== Education ===== */
+.edu-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.edu-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.edu-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.edu-logo {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+}
+
+.edu-logo img {
+  width: 100%;
+  height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.edu-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.edu-place {
+  color: var(--gold);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.edu-detail {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+/* ===== Skills ===== */
+/* Container ของ grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* พื้นฐานของการ์ด: บังคับให้เป็นสีขาวและมีเงาเหมือนส่วนอื่น */
+.skill-card {
+  background: #ffffff; /* เปลี่ยนเป็นสีขาวมาตรฐาน */
+  border: 1px solid #E6C667; /* ขอบสีทองจางๆ ตามธีม */
+  border-radius: 20px;
+  padding: 1.75rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.skill-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.skill-head i {
+  color: #C29A38; /* สีทอง */
+  font-size: 1.25rem;
+}
+
+.skill-head h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* ปรับแต่ง Tag ให้ดูพรีเมียม */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  background: #FFF8E1; /* สีเหลืองอ่อนพาสเทล */
+  border: 1px solid #FFE082;
+  color: #5D4037;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+  
+/* จัดเรียงรายการโปรเจกต์แนวตั้ง */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+/* การ์ดแนวนอนขนาดใหญ่ */
+.project-wide-card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 1.5rem;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease, border 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.project-wide-card:hover {
+  transform: translateY(-5px);
+  border-color: #E6C667; /* เน้นสีทองขอบตอนโฮเวอร์ */
+}
+
+/* กล่องรูปภาพให้เด่นชิดซ้าย */
+.project-image-box {
+  width: 200px; /* ขนาดรูปที่ใหญ่พอดีตา */
+  height: 200px;
+  margin-right: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.project-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* หัวข้อโปรเจกต์ด้านขวา */
+.project-info-box h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  letter-spacing: 1px;
+}
+
+/* Responsive สำหรับมือถือ */
+@media (max-width: 768px) {
+  .project-wide-card { flex-direction: column; text-align: center; }
+  .project-image-box { width: 100%; height: 250px; margin-right: 0; margin-bottom: 20px; }
+}
+
+/* --- ส่วนจัดการรายการการ์ดกว้าง (Wide Card) --- */
+.certificates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 2rem;
+}
+
+.certificates-card-wide {
+  background: #ffffff; /* พื้นหลังสีขาวนวล */
+  border: 1px solid var(--border); /* ใช้สีขอบตามธีมเดิม */
+  border-radius: 16px;
+  overflow: hidden; /* สำคัญ: ตัดมุมแบนเนอร์ให้โค้งมนตามการ์ด */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.certificates-card-wide:hover {
+  transform: translateY(-5px); /* เด้งขึ้นเล็กน้อย */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* เพิ่มเงาให้ดูมีมิติ */
+  border-color: var(--gold-soft); /* เปลี่ยนสีขอบเป็นสีทองตอนโฮเวอร์ */
+}
+
+/* ส่วนแบนเนอร์รูปภาพด้านบน */
+.certificates-banner {
+  width: 100%;
+  height: 220px; /* ความสูงแบนเนอร์ */
+  overflow: hidden;
+}
+
+.certificates-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* จัดรูปไม่ให้เบี้ยว */
+  transition: transform 0.5s ease;
+}
+
+.certificates-card-wide:hover .certificates-banner img {
+  transform: scale(1.05); /* รูปขยายตัวช้าๆ ตอนโฮเวอร์ */
+}
+
+/* ส่วนเนื้อหาข้อความ */
+.certificates-details {
+  padding: 1.5rem;
+}
+
+.certificates-details h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text);
+  font-size: 1.4rem;
+}
+
+.certificates-details p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+/* ส่วนของ Tag */
+.tag-container {
+  display: flex;
+  flex-wrap: wrap; /* ให้ Tag ขึ้นบรรทัดใหม่ได้ถ้าพื้นที่ไม่พอ */
+  gap: 8px;
+}
+
+/* ปรับให้รองรับหน้าจอมือถือ */
+@media (max-width: 600px) {
+  .certificates-banner { height: 160px; }
+  .certificates-details h3 { font-size: 1.2rem; }
+}
+
+/* ===== Contact / Footer ===== */
+.contact {
+  padding: 5rem 1.5rem 3rem;
+  text-align: center;
+  background: #ffcd60;
+  border-top: 2px solid #E6C667; 
+}
+
+.contact-title {
+  font-size: clamp(1.8rem, 5vw, 2.75rem);
+  font-weight: 700;
+}
+
+.contact-subtitle {
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  margin-bottom: 2.75rem;
+  font-size: 0.95rem;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gold-tint);
+  border: 1px solid var(--border);
+  color: #c58b0e ;
+  font-size: 1.35rem;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item:hover .contact-icon {
+  transform: translateY(-5px) scale(1.08);
+  background: linear-gradient(145deg, var(--gold), var(--gold-soft));
+  color: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.contact-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: color 0.25s ease;
+}
+
+.contact-item:hover .contact-label {
+  color: var(--gold);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .nav-links {
+    gap: 0.9rem;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+  }
+
+  .theme-toggle {
+    width: 34px;
+    height: 34px;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 180px;
+  }
+
+  .edu-card {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .contact-grid {
+    gap: 1.5rem;
+  }
+}
