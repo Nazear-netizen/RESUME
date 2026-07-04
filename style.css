@@ -151,86 +151,88 @@ img {
 }
 
 /* ===== Hero ===== */
+/* ===== Hero ===== */
 .hero {
     width: 100%;
-    /* พื้นหลังสีเหลืองทองเดิม พร้อมเสริมลายจุดสีทองเข้มจางๆ ให้ฟีลเทคโนโลยี */
     background-color: #ffcd60;
     background-image: radial-gradient(#e6b447 1.5px, transparent 1.5px);
     background-size: 24px 24px;
-    
-    padding: 80px 20px;
+    padding: 100px 20px; /* เพิ่มพื้นที่ด้านบนและล่างให้แบนเนอร์ดูโอ่อ่าขึ้น */
     border-bottom: 2px solid #E6C667; 
     box-shadow: 0 4px 20px rgba(230, 198, 103, 0.15);
-}
-
-/* ปรับสีตัวอักษรให้อ่านง่ายและชัดเจนขึ้นเมื่ออยู่บนพื้นหลังลายจุด */
-.hero .name {
-    color: #2b2620;
-}
-
-.hero .subtitle {
-    color: #4a3c14;
-}
-
-.hero .university {
-    color: #5d4d20; /* ปรับให้เข้มขึ้นเล็กน้อยเพื่อให้ตัดกับลายพื้นหลังและอ่านง่ายขึ้น */
 }
 
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center; /* บังคับตัวหนังสือให้อยู่กึ่งกลางเสมอ */
 }
 
+/* 🖼️ ปรับขนาดกรอบรูป Avatar ให้สมดุลขึ้น */
 .avatar {
-    width: 240px;
-    height: 240px;
-    border-radius: 20px;
+    width: 320px; /* ปรับขนาดสเกลลงมานิดนึงเพื่อให้ตัวหนังสือดูเด่นขึ้น */
+    height: 320px;
+    border-radius: 24px; /* ปรับความโค้งให้รับกับการ์ดโปรเจกต์ */
     padding: 6px;
     background: linear-gradient(145deg, var(--gold, #ffcd60), var(--gold-soft, #e6b447));
-    box-shadow: var(--shadow, 0 10px 20px rgba(0,0,0,0.15));
-    margin-bottom: 2rem;
+    box-shadow: 0 15px 35px rgba(170, 119, 0, 0.25); /* ปรับเงาให้ซอฟต์เข้ากับสีพื้นหลัง */
+    margin-bottom: 2.5rem; /* เพิ่มช่องไฟก่อนเริ่มข้อความชื่อ */
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .avatar:hover {
-    transform: scale(1.05) rotate(2deg); /* ขยายใหญ่ขึ้นและเอียงเล็กน้อยให้ดูมีลูกเล่น */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* เพิ่มเงาให้ดูเหมือนลอยขึ้นมา */
+    transform: scale(1.04);
+    box-shadow: 0 22px 45px rgba(170, 119, 0, 0.35);
 }
 
 .avatar img {
     width: 100%;
     height: 100%;
-    border-radius: 14px;
+    border-radius: 18px;
     object-fit: cover;
     border: 4px solid var(--surface, #fff);
 }
 
+/* 🏷️ ชื่อหลัก (KITTIPHUM) ขยายขนาดให้ตะโกนและสะดุดตา */
 .name {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 700;
-    letter-spacing: 0.01em;
+    font-family: 'Prompt', sans-serif; /* สลับมาใช้ฟอนต์ Prompt เพื่อความโมเดิร์นหนาแน่น */
+    font-size: clamp(2.5rem, 6vw, 4rem); /* เพิ่มขนาดขึ้นอย่างชัดเจน (เดิมเริ่มที่ 2rem) */
+    font-weight: 800; /* ดันความหนาขึ้นสุด */
+    color: #4A3B1B; /* ปรับเป็นสีน้ำตาลเข้มอมทองให้อ่านง่าย คมกริบ */
+    letter-spacing: 0.05em;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.6);
 }
 
+/* 💻 ชื่อสาขา/ตำแหน่ง (COMPUTER ENGINEERING...) */
 .subtitle {
-    margin-top: 0.75rem;
-    font-size: 0.95rem;
-    font-weight: 500;
-    letter-spacing: 0.18em;
+    font-family: 'Prompt', sans-serif;
+    margin-top: 1rem;
+    font-size: clamp(1rem, 2.5vw, 1.35rem); /* ขยายใหญ่ขึ้น (เดิมคือ 0.95rem ซึ่งเล็กไปมาก) */
+    font-weight: 700;
+    color: #2b2620; /* สีเข้มชัดเจนตัดกับพื้นหลังเหลือง */
+    letter-spacing: 0.12em; /* ลดระยะห่างตัวอักษรลงมานิดนึงเพื่อไม่ให้ล้นหน้าจอมือถือ */
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: center;
+    gap: 0.6rem;
 }
 
+/* 🏫 ชื่อมหาวิทยาลัย */
 .university {
-    margin-top: 0.5rem;
-    font-size: 0.85rem;
-    letter-spacing: 0.25em;
+    font-family: 'Prompt', sans-serif;
+    margin-top: 0.6rem;
+    font-size: clamp(0.9rem, 2vw, 1.1rem); /* ขยายใหญ่ขึ้นให้อ่านออกชัดเจน (เดิมคือ 0.85rem) */
+    font-weight: 600;
+    color: #ffffff; 
+    letter-spacing: 0.15em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* เพิ่มเงามืดบางๆ ข้างหลังให้อักษรสีขาวลอยเด่นขึ้น */
 }
+
 
 /* ===== Sections ===== */
 .section {
-  padding: 5rem 1.5rem;
+  padding: 6rem 1.5rem; /* เพิ่มระยะดัน บน-ล่าง ของแต่ละเซกชันให้โปร่งโอ่อ่าขึ้น */
 }
 
 .section-alt {
@@ -238,376 +240,791 @@ img {
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px; /* ขยายขอบเขตคอนเทนเนอร์หลักจาก 1000px เป็น 1100px ให้รับกับส่วน Hero */
   margin: 0 auto;
 }
 
 .section-title {
   text-align: center;
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
-  font-weight: 600;
+  font-size: clamp(2.2rem, 5vw, 2.8rem); /* ขยายหัวข้อเซกชันให้ใหญ่ขึ้นและเด่นชัด */
+  font-weight: 700;
 }
 
 .section-subtitle {
   text-align: center;
   color: var(--text-muted);
-  margin-top: 0.35rem;
-  margin-bottom: 3rem;
-  font-size: 0.95rem;
+  margin-top: 0.5rem;
+  margin-bottom: 3.5rem;
+  font-size: 1.05rem; /* ปรับข้อความย่อยใต้หัวข้อใหญ่ขึ้นเล็กน้อย */
 }
 
-/* ===== About Me ===== */
-/* 1. กล่องกรอบหลัก */
-/* 1. ตัวกรอบสีทองมนๆ */
+/* 1. กล่องกรอบหลักขยายสเกล */
 .about-container {
-  background: var(--surface); /* หรือใส่สี #FFFDF3 ตามธีมคุณ */
-  border: 1px solid #E6C667;
-  border-radius: 30px;
-  padding: 3rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  background: #ffffff;
+  border: 1px solid rgba(212, 175, 90, 0.35); /* ใช้สีทอง token ของเว็บเพื่อความเป็นเนื้อเดียวกัน */
+  border-radius: 28px; /* เพิ่มความโค้งมนตามขนาดกล่องที่ใหญ่ขึ้น */
+  padding: 4.5rem 4rem; /* เพิ่มพื้นที่หายใจด้านใน (Padding) ให้ดูกว้างขวางสมดุล */
+  box-shadow: var(--shadow); /* ดึงเงาสไตล์ซอฟต์นุ่มจาก Token มาใช้ */
+  max-width: 1100px; /* ขยายความกว้างสูงสุดของกล่องข้อความ */
+  margin: 3.5rem auto;
 }
 
-/* 2. จัดวาง Flexbox ให้ข้อความซ้าย รูปขวา */
+/* 2. จัดวางโครงสร้างให้รูปภาพกับข้อความบาลานซ์กัน */
 .about-content {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 3rem;
-  margin-top: 2rem;
+  justify-content: space-between;
+  gap: 4.5rem; /* ขยับช่องไฟระหว่างรูปและข้อความเล็กน้อย */
 }
 
-.about-text { flex: 1; }
-.about-img { flex: 0 0 40%; } /* คุมขนาดรูปให้ไม่ใหญ่เกินไป */
+/* ส่วนของเนื้อหาข้อความ */
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-family: 'Prompt', sans-serif; /* ดึงฟอนต์หัวข้อหลักมาใช้เพื่อความสมาร์ท */
+  font-size: clamp(1.8rem, 3vw, 2.3rem); /* ปรับให้ขยายตามขนาดหน้าจออย่างสมดุล */
+  font-weight: 700;
+  color: #4A3B1B; /* สีน้ำตาลเข้มอมทองตามสไตล์หัวข้อด้านบน */
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.about-text p {
+  font-size: 1.5rem; /* ขยายขนาดตัวหนังสือเนื้อหาให้อ่านง่ายเต็มสายตา (จากเดิม 1rem) */
+  color: #444444; /* ปรับให้เข้มข้นขึ้นเล็กน้อยเพื่อตัดกับพื้นหลังขาวอย่างคมชัด */
+  line-height: 1.85; /* เพิ่มช่องว่างบรรทัดให้โปร่ง สบายตา ไม่เป็นก้อนอึดอัด */
+  margin-bottom: 1.2rem;
+}
+
+/* 3. ส่วนกล่องรูปภาพ: ปรับโครงสร้างใหม่ให้ใหญ่เต็มตา */
+.about-img {
+  flex: 0 0 400px; /* ขยายพื้นที่กางฝั่งรูปภาพจาก 350px ขึ้นเป็น 400px */
+  display: flex;
+  justify-content: center;
+}
 
 .about-img img {
-  width: 85%;
-  border-radius: 20px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 360px; /* ขยายหน้ากว้างของรูปจริงจาก 300px ขึ้นเป็น 360px โชว์รูปได้ชัดเจน */
+  height: auto;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(150, 112, 40, 0.15); /* ปรับเงาของรูปให้เป็นโทนอุ่นเข้ากับธีม */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.about-img img:hover {
+  transform: scale(1.04); /* ลูกเล่นขยายตอนเมาส์ชี้ให้นุ่มนวลขึ้น */
+}
+
+/* ===== Responsive จัดการหน้าจอมือถือและแท็บเล็ต ===== */
+@media (max-width: 950px) {
+  .about-container {
+    padding: 3rem 2rem;
+    margin: 2rem 20px;
+  }
+  
+  .about-content {
+    flex-direction: column-reverse;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .about-img {
+    flex: 1;
+    width: 100%;
+  }
+
+  .about-img img {
+    max-width: 280px; /* บนมือถือปรับรูปให้ใหญ่กว่าเดิมเล็กน้อยเพื่อให้เห็นใบหน้าชัดเจน */
+  }
 }
 
 
-/* ===== Education ===== */
+/* ===== Education Section (Enlarged Premium Style) ===== */
+
+/* กล่องใหญ่คุมทั้งหมด: ขยายความกว้างสูงสุดให้กว้างขึ้น */
+/* ===== Education Section (Enlarged Premium Style) ===== */
+
+/* กล่องใหญ่คุมทั้งหมด: ขยายความกว้างสูงสุดให้กว้างขึ้น */
 .edu-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  max-width: 720px;
-  margin: 0 auto;
+  gap: 2.5rem; /* เพิ่มระยะห่างระหว่างแต่ละการ์ดให้อ่านง่าย ไม่เบียด */
+  max-width: 1000px; /* ขยายจาก 850px เป็น 1000px เพื่อให้รับกับระดับสายตาส่วนอื่นๆ */
+  margin: 3.5rem auto;
+  padding: 0 15px 0 75px; /* เพิ่มพื้นที่ฝั่งซ้ายเล็กน้อยเพื่อรองรับจุดและเส้นที่ขยายใหญ่ขึ้น */
+  position: relative; 
 }
 
+/* 1. เส้นตรงแนวตั้งฝั่งซ้าย: ปรับให้หนาขึ้นดูมั่นคง */
+.edu-list::before {
+  content: '';
+  position: absolute;
+  left: 25px; /* ขยับระยะตำแหน่งตามความหนาของเส้น */
+  top: 0;
+  bottom: 0;
+  width: 5px; /* ขยายความหนาของเส้นจาก 4px เป็น 5px */
+  background: rgba(230, 198, 103, 0.45); 
+  border-radius: 3px;
+}
+
+/* ตัวการ์ดข้อมูลประวัติการศึกษา: เพิ่มความโค้งมนและ Padding ด้านใน */
 .edu-card {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 1.25rem 1.5rem;
-  box-shadow: var(--shadow-sm);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  gap: 2rem; /* เพิ่มช่องไฟระหว่างโลโก้กับตัวหนังสือ */
+  background: #fffdf9; 
+  border-radius: 0 24px 24px 0; /* เพิ่มโค้งมนให้สวยงามพรีเมียมขึ้น */
+  padding: 2rem 2.5rem; /* ขยายพื้นที่เว้นระยะด้านในการ์ดให้ดูใหญ่และโปร่งสบายตา */
+  box-shadow: 0 12px 30px rgba(150, 112, 40, 0.08); 
+  position: relative;
+  
+  /* 2. เส้นหนาขอบซ้ายสุดของการ์ด */
+  border-left: 6px solid #E6C667; /* เพิ่มความหนาจาก 5px เป็น 6px */
+  
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
+/* เอฟเฟกต์ยกตัวเล็กน้อยเวลาเมาส์ชี้ */
 .edu-card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow);
+  transform: translateY(-4px); /* ยกตัวขึ้นสูงกว่าเดิมนิดนึงให้ดูมีมิติ */
+  box-shadow: 0 20px 40px rgba(230, 198, 103, 0.16);
+  border-left-color: #d6a000; 
 }
 
+/* 3. ปุ่มวงกลมครอบทับเส้นตรง: ขยายขนาดวงให้ใหญ่ขึ้นชัดเจน */
+.edu-card::before {
+  content: '';
+  position: absolute;
+  left: -59px; /* ขยับระยะให้วิ่งไปอยู่กึ่งกลางเส้นแนวตั้งอันใหม่พอดี */
+  top: 50%;
+  transform: translateY(-50%);
+  
+  width: 22px; /* ขยายขนาดวงกลมจาก 18px เป็น 22px */
+  height: 22px;
+  background: #ffffff; 
+  border: 5px solid #E6C667; /* เพิ่มความหนาของขอบวงกลมจาก 4px เป็น 5px */
+  border-radius: 50%;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+/* เมื่อเมาส์ชี้ให้จุดวงกลมเปลี่ยนเป็นสีทองเต็มดวง */
+.edu-card:hover::before {
+  background: #E6C667;
+}
+
+/* กล่องใส่โลโก้สถาบัน: ปรับสเกลกล่องให้ใหญ่รับกับขนาดการ์ด */
 .edu-logo {
   flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  border-radius: 12px;
+  width: 100px; /* ขยายขนาดความกว้างจาก 65px เป็น 80px */
+  height: 100px; /* ขยายขนาดความสูงจาก 65px เป็น 80px */
+  border-radius: 16px; /* ขยับความโค้งมนของกล่องโลโก้ */
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--border);
+  background-color: #ffffff; 
+  border: 1px solid rgba(230, 198, 103, 0.25); 
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 .edu-logo img {
   width: 100%;
   height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
+  object-fit: contain; 
 }
 
+/* กล่องข้อมูลข้อความภายใน */
+.edu-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem; /* เพิ่มช่องไฟระหว่างบรรทัดตัวหนังสือให้โปร่งขึ้น */
+}
+
+/* ระดับการศึกษา (เช่น ระดับปริญญาตรี) */
 .edu-info h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-family: 'Prompt', sans-serif; /* สลับมาใช้ฟอนต์ Prompt เพื่อความโมเดิร์นหนาแน่นสไตล์เดียวกับ Hero */
+  font-size: 1.5rem; /* ขยายขนาดหัวข้อจาก 1.3rem เป็น 1.5rem */
+  font-weight: 700;
+  color: #ab8000; 
+  margin: 0;
 }
 
+/* ชื่อมหาวิทยาลัย / โรงเรียน */
 .edu-place {
-  color: var(--gold);
-  font-weight: 500;
-  font-size: 0.95rem;
+  color: #b59238; 
+  font-weight: 600;
+  font-size: 1.15rem; /* ขยายขนาดจาก 1rem เป็น 1.15rem */
 }
 
+/* ปี พ.ศ. */
 .edu-detail {
-  color: var(--text-muted);
-  font-size: 0.88rem;
+  color: #555555; /* ปรับสีให้เข้มขึ้นเล็กน้อยเพื่อให้อ่านง่ายสบายตาเมื่อตัวหนังสือใหญ่ขึ้น */
+  font-size: 0.98rem; /* ขยายขนาดจาก 0.9rem เป็น 0.98rem */
+  font-weight: 500;
 }
 
-/* ===== Skills ===== */
-/* Container ของ grid */
+/* ===== Responsive จัดการเมื่อเปิดบนจอมือถือ ===== */
+@media (max-width: 768px) {
+  .edu-list {
+    padding-left: 55px; /* ปรับระยะเยื้องฝั่งซ้ายบนมือถือ */
+    margin: 2.5rem 15px;
+  }
+  .edu-list::before {
+    left: 18px;
+  }
+  .edu-card {
+    padding: 1.5rem 1.75rem;
+    gap: 1.5rem;
+    border-radius: 0 16px 16px 0;
+  }
+  .edu-card::before {
+    left: -44px; /* ปรับตำแหน่งจุดบนมือถือให้พอดี */
+    width: 18px;
+    height: 18px;
+    border-width: 4px;
+  }
+  .edu-logo {
+    width: 65px;
+    height: 65px;
+  }
+  .edu-info h3 {
+    font-size: 1.25rem;
+  }
+  .edu-place {
+    font-size: 1rem;
+  }
+}
+
+
+/* ===== Skills Section (MAX Enlarged Premium Style) ===== */
+
+/* Container ของ grid: ขยายหน้ากว้างรวมให้เท่ากับเซกชันอื่น ๆ และขยับช่องไฟกว้างขึ้น */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  /* ปรับหน้ากว้างขั้นต่ำของการ์ดแต่ละใบจาก 280px ขึ้นเป็น 320px เพื่อให้การ์ดดูใหญ่และกว้างขวางสะใจ */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem; /* เพิ่มระยะห่างระหว่างการ์ดจาก 1.5rem เป็น 2rem */
+  margin-top: 3rem;
+  max-width: 1100px; /* คุมให้บาลานซ์กับคอนเทนเนอร์หลักของหน้าเว็บ */
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* พื้นฐานของการ์ด: บังคับให้เป็นสีขาวและมีเงาเหมือนส่วนอื่น */
+/* พื้นฐานของการ์ด: ขยายกรอบ ความโค้งมน และเงานุ่มนวล */
 .skill-card {
-  background: #ffffff; /* เปลี่ยนเป็นสีขาวมาตรฐาน */
-  border: 1px solid #E6C667; /* ขอบสีทองจางๆ ตามธีม */
-  border-radius: 20px;
-  padding: 1.75rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+  background: #ffffff; 
+  border: 1px solid rgba(230, 198, 103, 0.35); /* ใช้เส้นขอบทองจาง ๆ ละมุนสไตล์กล่องประวัติศึกษา */
+  border-radius: 24px; /* ปรับความโค้งมนขึ้นเป็น 24px รับสเกลกล่องที่ใหญ่ขึ้น */
+  padding: 2.2rem 2rem; /* ขยายพื้นที่เยื้องด้านใน (Padding) เพิ่มความโปร่งสบายตา */
+  box-shadow: 0 12px 35px rgba(150, 112, 40, 0.08); /* เงาฟุ้งโทนอุ่นจาง ๆ */
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
+/* เอฟเฟกต์ยกตัวเมื่อเมาส์ชี้ */
 .skill-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  transform: translateY(-6px);
+  border-color: #E6C667; /* ขอบสีทองสว่างวาบขึ้นตอนโฮเวอร์ */
+  box-shadow: 0 20px 45px rgba(230, 198, 103, 0.16);
 }
 
+/* หัวข้อภายในการ์ด (ไอคอน + ชื่อกลุ่มทักษะ) */
 .skill-head {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.25rem;
+  gap: 1rem; /* เพิ่มระยะห่างระหว่างไอคอนกับตัวอักษร */
+  margin-bottom: 1.5rem; /* เพิ่มช่องไฟก่อนเริ่มรายการ Tag */
 }
 
+/* ไอคอนหน้าชื่อกลุ่มสกิล */
 .skill-head i {
-  color: #C29A38; /* สีทอง */
-  font-size: 1.25rem;
+  color: #C29A38; 
+  font-size: 1.5rem; /* ขยายขนาดไอคอนขึ้นเด่นชัด (จากเดิม 1.25rem) */
 }
 
+/* ชื่อกลุ่มทักษะ (เช่น Programming / Design) */
 .skill-head h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #333;
+  font-family: 'Prompt', sans-serif; /* สลับมาใช้ฟอนต์ Prompt เพิ่มความหนาแน่นแข็งแรง */
+  font-size: 1.4rem; /* ดันขนาดตัวอักษรหัวข้อขึ้นจาก 1.2rem เป็น 1.4rem */
+  font-weight: 700;
+  color: #1a2530; /* สีน้ำตาลเข้มจัดเกือบดำ คมชัดสะดุดตา */
 }
 
-/* ปรับแต่ง Tag ให้ดูพรีเมียม */
+/* กลุ่ม Tag แสดงรายชื่อสกิล */
 .tag-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.75rem; /* เพิ่มระยะห่างระหว่างป้าย Tag ให้ดูไม่อึดอัด */
 }
 
+/* ตัวป้าย Tag ไอเทมสกิลแต่ละตัว: ขยายใหญ่สไตล์พรีเมียมแคปซูล */
 .tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.6rem 1.3rem; /* ขยายขนาดป้ายให้ใหญ่ อวบอิ่ม และกดง่ายสบายตา */
   border-radius: 50px;
-  background: #FFF8E1; /* สีเหลืองอ่อนพาสเทล */
-  border: 1px solid #FFE082;
-  color: #5D4037;
-  font-size: 0.85rem;
-  font-weight: 500;
+  background: rgba(230, 198, 103, 0.1); /* สลับมาใช้สีทองโปร่งแสง อิงตามโทนหลักของเว็บ */
+  border: 1px solid rgba(230, 198, 103, 0.25);
+  color: #b59238; /* ข้อความสีทองเข้มคมเด่นชัดบนป้าย */
+  font-size: 0.95rem; /* ดันขนาดตัวหนังสือขึ้นจากเดิม 0.85rem อ่านออกชัดเจนไม่ต้องเพ่ง */
+  font-weight: 600;
+  transition: all 0.25s ease;
 }
 
-  
-/* จัดเรียงรายการโปรเจกต์แนวตั้ง */
+/* ลูกเล่นเวลาเมาส์ชี้ที่ป้าย Tag สกิลย่อย */
+.tag:hover {
+  background: #1a2530; /* เวลาชี้ให้ป้ายเปลี่ยนเป็นสีน้ำเงินเข้มขรึม */
+  color: #ffffff;      /* ตัวหนังสือเปลี่ยนเป็นสีขาวตัดกันสวยงาม */
+  border-color: #1a2530;
+  transform: scale(1.05); /* เด้งโตขึ้นมาเล็กน้อยเพิ่มลูกเล่น */
+}
+
+/* ===== Responsive: จัดระเบียบขนาดเมื่อเปิดบนจอมือถือ ===== */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* บนมือถือปรับสเกลความกว้างให้แคบลงตามหน้าจอ */
+    gap: 1.5rem;
+    padding: 0 15px;
+  }
+  .skill-card {
+    padding: 1.75rem 1.5rem;
+  }
+  .skill-head h3 {
+    font-size: 1.25rem;
+  }
+  .tag {
+    font-size: 0.88rem;
+    padding: 0.5rem 1.1rem;
+  }
+}
+/* ===== My Projects Section (Visual Focus Style) ===== */
+/* ===== My Projects Section (Visual Focus Layout) ===== */
+
+/* กล่องใหญ่คุมทั้งหมด: เปลี่ยนมาจัดกลุ่มแบบเรียงหน้ากระดานกึ่งกลางเว็บ */
 .project-list {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  margin-top: 2rem;
+  flex-direction: row;
+  justify-content: center; /* ดึงการ์ดทั้งหมดมากองตรงกลางอย่างสมดุล */
+  flex-wrap: wrap;         /* รองรับการตัดบรรทัดเมื่อหน้าจอแคบลง */
+  gap: 35px;               /* ช่องไฟระหว่างการ์ดสองใบ */
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1100px;       /* คุมความกว้างไม่ให้การ์ดกางออกจนอ้วนเกินไป */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
 }
 
-/* การ์ดแนวนอนขนาดใหญ่ */
+/* ตัวกรอบการ์ดหลัก: ปรับเป็นแนวตั้งสีขาว ขอบมน มีเงานุ่มนวลตามที่คุณชอบ */
 .project-wide-card {
   display: flex;
-  align-items: center;
-  background: #ffffff;
-  border-radius: 25px;
-  padding: 1.5rem;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.07);
-  transition: transform 0.3s ease, border 0.3s ease;
-  border: 1px solid transparent;
+  flex-direction: column;  /* เปลี่ยนจากแนวนอนเดิม ให้รูปอยู่บน ข้อความอยู่ล่าง */
+  background: #ffffff;     /* คืนชีพกรอบพื้นหลังสีขาวล้วน */
+  border-radius: 24px;     /* ขอบโค้งมนสไตล์โมเดิร์น */
+  overflow: hidden;        /* กันไม่ให้รูปภาพล้นทะลุขอบโค้งของการ์ด */
+  padding: 0;              /* รีเซ็ตเพื่อให้รูปภาพกางได้เต็มขอบด้านบน */
+  
+  /* บังคับขนาดการ์ดเมื่อเหลือ 2 รูป ไม่ให้กางเต็มหน้าจอจนสเกลพัง */
+  width: calc(50% - 18px);  
+  max-width: 380px;        /* ความกว้างที่สมบูรณ์แบบที่สุดตามรูปตัวอย่าง */
+  
+  /* เงาพื้นหลังโทนอุ่นผสมทองจางๆ ล้อไปกับธีมเว็บของคุณ */
+  border: 1px solid rgba(230, 198, 103, 0.25); 
+  box-shadow: 0 12px 35px rgba(230, 198, 103, 0.08); 
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
+/* เอฟเฟกต์ยกตัวและเน้นขอบทองตอนเมาส์ชี้ */
 .project-wide-card:hover {
-  transform: translateY(-5px);
-  border-color: #E6C667; /* เน้นสีทองขอบตอนโฮเวอร์ */
+  transform: translateY(-8px); /* ยกตัวการ์ดขึ้นเด่นชัด */
+  box-shadow: 0 20px 45px rgba(230, 198, 103, 0.18);
+  border-color: #E6C667;       /* ขอบสีทองสว่างขึ้นชัดเจน */
 }
 
-/* กล่องรูปภาพให้เด่นชิดซ้าย */
+/* กล่องใส่รูปภาพด้านบน: กางเต็มความกว้าง 100% เน้นโชว์ผลงาน */
 .project-image-box {
-  width: 200px; /* ขนาดรูปที่ใหญ่พอดีตา */
-  height: 200px;
-  margin-right: 40px;
-  border-radius: 20px;
+  width: 100%;
+  aspect-ratio: 4 / 3;     /* ล็อกอัตราส่วนภาพ 4:3 โชว์ดีไซน์เว็บและโลโก้ได้เต็มมิติ */
   overflow: hidden;
-  flex-shrink: 0;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  position: relative;
+  margin-right: 0;         /* รีเซ็ตค่าระยะห่างเดิมออก */
 }
 
 .project-image-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;       /* คุมรูปภาพผลงานให้พอดีกล่อง ไม่บิดเบี้ยว */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* หัวข้อโปรเจกต์ด้านขวา */
+/* ลูกเล่นซูมรูปภาพเบาๆ เวลาเมาส์ชี้ที่การ์ด */
+.project-wide-card:hover .project-image-box img {
+  transform: scale(1.05);
+}
+
+/* กล่องใส่ข้อมูลตัวหนังสือและปุ่มด้านล่าง */
+.project-info-box {
+  padding: 2rem 1.8rem 2.2rem 1.8rem;
+  text-align: center;      /* จัดตัวหนังสือและองค์ประกอบให้อยู่กึ่งกลางสมดุล */
+}
+
+/* ชื่อหัวข้อโปรเจกต์ */
 .project-info-box h3 {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #333;
-  letter-spacing: 1px;
+  color: #af7e00bb;          /* สีน้ำเงินเข้มตามธีมหลักของคุณ */
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;   /* เพิ่มระยะห่างตัวอักษรให้ดูโปร่งพรีเมียม */
 }
 
-/* Responsive สำหรับมือถือ */
-@media (max-width: 768px) {
-  .project-wide-card { flex-direction: column; text-align: center; }
-  .project-image-box { width: 100%; height: 250px; margin-right: 0; margin-bottom: 20px; }
+/* คำอธิบายรายละเอียดโปรเจกต์เพิ่มเติม */
+.project-desc {
+  font-size: 0.92rem;
+  color: #555555;
+  line-height: 1.6;
+  margin-top: 0.8rem;
+  margin-bottom: 1.2rem;
 }
 
-/* --- ส่วนจัดการรายการการ์ดกว้าง (Wide Card) --- */
+/* กลุ่มแท็กบอกเครื่องมือ (Figma / HTML / Illustrator) */
+.project-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1.8rem;
+}
+
+.project-tags span {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #b59238; /* ตัวอักษรสีทองเข้ม */
+  background: rgba(230, 198, 103, 0.12); /* พื้นหลังทองจางๆ */
+  padding: 4px 12px;
+  border-radius: 50px;
+  border: 1px solid rgba(230, 198, 103, 0.25);
+}
+
+/* ปุ่มกด View Project สไตล์มินิมอล */
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #1a2530;
+  text-decoration: none;
+  border: 2px solid #1a2530;
+  padding: 0.6rem 1.4rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  background: #1a2530;
+  color: #ffffff;
+}
+
+.project-btn:hover i {
+  transform: translateX(4px);
+  transition: transform 0.2s ease;
+}
+
+/* ===== Responsive: จัดการหน้าจอมือถือและแท็บเล็ต ===== */
+@media (max-width: 900px) {
+  .project-wide-card {
+    width: calc(50% - 15px); /* หน้าจอแท็บเล็ตยังคงเรียงคู่กันสวยๆ */
+  }
+}
+
+@media (max-width: 650px) {
+  .project-list {
+    flex-direction: column;
+    align-items: center;   /* สลับมาเรียงเดี่ยวแนวตั้งลงมาตรงกลางบนมือถือ */
+    gap: 25px;
+  }
+  .project-wide-card {
+    width: 100%;
+    max-width: 360px;      /* คุมขนาดไม่ให้หลุดขอบหน้าจอมือถือ */
+  }
+}
+
+/* ===== Certificates Section (MAX Enlarged & Fixed Border) ===== */
+
+/* ===== Certificates Section (Wide & Spacious Style) ===== */
+
 .certificates-list {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin-top: 2rem;
+  flex-direction: row;
+  justify-content: center; 
+  flex-wrap: wrap;         
+  gap: 40px;               /* ขยับช่องไฟระหว่างการ์ดสองใบให้ห่างขึ้นอีกนิด ดูหรูหรามีสเปซ */
+  margin-top: 3.5rem;
+  width: 100%;
+  max-width: 1100px;       
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
 }
 
+/* ตัวกรอบการ์ดหลัก: ปรับให้อ้วนขึ้น กว้างขึ้น และลดความอึดอัด */
 .certificates-card-wide {
-  background: #ffffff; /* พื้นหลังสีขาวนวล */
-  border: 1px solid var(--border); /* ใช้สีขอบตามธีมเดิม */
-  border-radius: 16px;
-  overflow: hidden; /* สำคัญ: ตัดมุมแบนเนอร์ให้โค้งมนตามการ์ด */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;  
+  background: #ffffff !important; 
+  border-radius: 28px;     
+  overflow: hidden;        
+  padding: 0;              
+  
+  /* 🛠️ จุดเปลี่ยนสำคัญ: ปรับการคำนวณให้การ์ดอ้วนขึ้นอย่างสมบูรณ์แบบ */
+  width: calc(50% - 20px);  
+  max-width: 440px;        /* 🚀 ดันความอ้วนขึ้นจาก 380px เป็น 440px เพื่อให้ตัวหนังสือแผ่ออกด้านข้างได้สวย */
+  
+  border: 1px solid rgba(212, 175, 90, 0.35) !important; /* ใช้ตัวแปรสีทองจาง ๆ ละมุนผิว */
+  box-shadow: 0 15px 40px rgba(150, 112, 40, 0.08) !important; 
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
 .certificates-card-wide:hover {
-  transform: translateY(-5px); /* เด้งขึ้นเล็กน้อย */
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1); /* เพิ่มเงาให้ดูมีมิติ */
-  border-color: var(--gold-soft); /* เปลี่ยนสีขอบเป็นสีทองตอนโฮเวอร์ */
+  transform: translateY(-6px); 
+  box-shadow: 0 25px 55px rgba(150, 112, 40, 0.16) !important; /* เงาตอนโฮเวอร์ดูฟุ้งกว้างขึ้นรับขนาดการ์ด */
+  border-color: #E6C667 !important;
 }
 
-/* ส่วนแบนเนอร์รูปภาพด้านบน */
+/* กล่องใส่รูปภาพเกียรติบัตรด้านบน: ขยายตาข่ายรับความอ้วนของการ์ด */
 .certificates-banner {
   width: 100%;
-  height: 220px; /* ความสูงแบนเนอร์ */
+  aspect-ratio: 16 / 10;     /* 📸 เปลี่ยนจาก 4:3 เป็น 16:10 ให้ภาพแนวนอนของใบเซอดูกว้าง เต็มตา และไม่สูงโย่งเกินไป */
   overflow: hidden;
+  background-color: #fcfbfa;
 }
 
 .certificates-banner img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* จัดรูปไม่ให้เบี้ยว */
-  transition: transform 0.5s ease;
+  object-fit: cover;       
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .certificates-card-wide:hover .certificates-banner img {
-  transform: scale(1.05); /* รูปขยายตัวช้าๆ ตอนโฮเวอร์ */
+  transform: scale(1.03);
 }
 
-/* ส่วนเนื้อหาข้อความ */
+/* กล่องใส่ข้อมูลรายละเอียดด้านล่าง */
 .certificates-details {
-  padding: 1.5rem;
-}
-
-.certificates-details h3 {
-  margin: 0 0 0.5rem 0;
-  color: var(--text);
-  font-size: 1.4rem;
-}
-
-.certificates-details p {
-  color: #666;
-  font-size: 0.95rem;
-  margin-bottom: 1.25rem;
-  line-height: 1.6;
-}
-
-/* ส่วนของ Tag */
-.tag-container {
+  padding: 2.5rem 2.5rem 2.8rem 2.5rem; /* ขยายขอบ Padding ด้านในให้อวบอิ่มเข้ากับตัวการ์ด */
+  text-align: center;      
   display: flex;
-  flex-wrap: wrap; /* ให้ Tag ขึ้นบรรทัดใหม่ได้ถ้าพื้นที่ไม่พอ */
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ชื่อโครงการ / ชื่อใบเกียรติบัตร */
+.certificates-details h3 {
+  font-family: 'Prompt', sans-serif;
+  font-size: 1.4rem;      /* ดันขนาดอักษรขึ้นอีกนิดให้บาลานซ์กับความกว้าง */
+  font-weight: 700;
+  color: #bc9000; 
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+  
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ชื่อสถาบัน/หน่วยงานที่ออกให้ */
+.cert-issuer {
+  font-size: 1.05rem;
+  color: #b59238; 
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
 }
 
-/* ปรับให้รองรับหน้าจอมือถือ */
-@media (max-width: 600px) {
-  .certificates-banner { height: 160px; }
-  .certificates-details h3 { font-size: 1.2rem; }
+/* คำอธิบายใบเกียรติบัตร */
+.cert-desc {
+  font-size: 1rem;       /* ปรับขนาดให้อ่านสบายตาขึ้น */
+  color: #555555;
+  line-height: 1.7;      /* เพิ่มระยะห่างบรรทัดให้โปร่งขึ้น */
+  margin-bottom: 1.2rem;
 }
+
+/* วันที่/ปีที่ได้รับ */
+.cert-date {
+  font-size: 0.95rem;
+  color: #777777;
+  font-weight: 500;
+  margin-bottom: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* ปุ่ม View Full Certificate ตัวโตพรีเมียม */
+.cert-btn {
+  margin-top: auto; 
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a2530;
+  text-decoration: none;
+  border: 2px solid #1a2530;
+  padding: 0.75rem 1.8rem; /* ขยายขนาดปุ่มให้ยาวและกดง่ายเต็มสายตา */
+  border-radius: 14px;
+  transition: all 0.3s ease;
+}
+
+.cert-btn:hover {
+  background: #1a2530;
+  color: #ffffff;
+}
+
+/* ===== Responsive: จัดเรียงสเกลเมื่ออยู่บนมือถือและแท็บเล็ต ===== */
+@media (max-width: 950px) {
+  .certificates-list {
+    gap: 2rem;
+    padding: 0 20px;
+  }
+  .certificates-card-wide {
+    width: calc(50% - 1rem);
+    max-width: 100%; /* ยอมให้กางเต็มพื้นที่ครึ่งจอในแท็บเล็ต */
+    border-radius: 24px;
+  }
+}
+
+@media (max-width: 650px) {
+  .certificates-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .certificates-card-wide {
+    width: 100%;
+    max-width: 380px; /* บนมือถือบีบให้กลับมาอ้วนพอดีอุ้งมือถือ */
+  }
+}
+
 
 /* ===== Contact / Footer ===== */
 .contact {
-  padding: 5rem 1.5rem 3rem;
+  background: #1a2530; /* สีครีมนวลเข้ากับธีมหลักของเว็บ */
+  padding: 5rem 0 2rem 0; /* เว้นพื้นที่ด้านบนให้โปร่งสบายตา */
   text-align: center;
-  background: #ffcd60;
-  border-top: 2px solid #E6C667; 
+  border-top: 1px solid rgba(230, 198, 103, 0.2); /* เส้นขอบทองบางๆ กั้นสัดส่วน */
 }
 
+/* หัวข้อคำว่า Contact */
 .contact-title {
-  font-size: clamp(1.8rem, 5vw, 2.75rem);
+  font-size: 2.2rem;
   font-weight: 700;
+  color: #c29200; /* สีน้ำเงินเข้มสุดเท่ */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
 }
 
+/* ข้อความเกริ่นนำ */
 .contact-subtitle {
-  color: var(--text-muted);
-  margin-top: 0.5rem;
-  margin-bottom: 2.75rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  color: #8b8b8b;
+  max-width: 500px;
+  margin: 0 auto 3rem auto;
+  line-height: 1.6;
 }
 
+/* จัดวางกลุ่มปุ่มติดต่อสื่อสารให้บาลานซ์กันตรงกลาง */
 .contact-grid {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  margin-bottom: 3.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px; /* ระยะห่างระหว่างปุ่ม */
+  max-width: 900px;
+  margin: 0 auto 4rem auto;
+  padding: 0 20px;
 }
 
+/* สไตล์ของปุ่มไอคอนช่องทางติดต่อ */
 .contact-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 0.65rem;
+  gap: 12px;
+  background: #ffffff; /* พื้นหลังปุ่มขาวล้วนตัดกับพื้นครีม */
+  border: 1px solid rgba(230, 198, 103, 0.4); /* ขอบทองบางๆ */
+  border-radius: 14px;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  color: #1a2530; /* ตัวอักษรน้ำเงินเข้ม */
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 6px 15px rgba(230, 198, 103, 0.05); /* เงานุ่มโทนอุ่น */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/* วงกลมล้อมรอบตัวไอคอน FontAwesome ด้านใน */
 .contact-icon {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--gold-tint);
-  border: 1px solid var(--border);
-  color: #c58b0e ;
-  font-size: 1.35rem;
-  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  width: 32px;
+  height: 32px;
+  background: rgba(230, 198, 103, 0.15); /* พื้นหลังไอคอนสีทองอ่อนๆ */
+  color: #b59238; /* ตัวไอคอนสีทองเข้มเด่นชัด */
+  border-radius: 50%;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
 }
 
+/* เอฟเฟกต์ตอนเอาเมาส์ชี้ (Hover Effect) */
+.contact-item:hover {
+  transform: translateY(-4px); /* ยกตัวปุ่มขึ้นเล็กน้อย */
+  background: #93680b; /* สลับพื้นหลังเป็นสีน้ำเงินเข้ม */
+  color: #ffffff; /* เปลี่ยนตัวหนังสือเป็นสีขาว */
+  border-color: #1a2530;
+  box-shadow: 0 12px 25px rgba(26, 37, 48, 0.15);
+}
+
+/* เมื่อโฮเวอร์ ให้วงกลมไอคอนเปลี่ยนเป็นสีทองสว่าง */
 .contact-item:hover .contact-icon {
-  transform: translateY(-5px) scale(1.08);
-  background: linear-gradient(145deg, var(--gold), var(--gold-soft));
-  color: var(--surface);
-  box-shadow: var(--shadow);
+  background: #E6C667;
+  color: #1a2530;
 }
 
-.contact-label {
+/* ส่วนเครดิตท้ายเว็บล่างสุด */
+.footer-copyright {
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  padding-top: 2rem;
   font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  transition: color 0.25s ease;
+  color: #888888;
 }
 
-.contact-item:hover .contact-label {
-  color: var(--gold);
-}
-
-.copyright {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  opacity: 0.6;
+/* Responsive: สำหรับจอมือถือขนาดเล็ก */
+@media (max-width: 550px) {
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* บนมือถือแบ่งเป็น 2 คอลัมน์คู่กันสวยๆ */
+    gap: 15px;
+  }
+  .contact-item {
+    justify-content: center; /* จัดเนื้อหาปุ่มให้อยู่ตรงกลาง */
+    padding: 0.8rem 1rem;
+  }
 }
 
 /* ===== Responsive ===== */
